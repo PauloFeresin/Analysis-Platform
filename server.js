@@ -3,10 +3,13 @@ const { connect } = require("./config/mongo")
 const Site = require("./models/Site");
 const sitesRouter = require("./routes/sites");
 const logsRouter = require("./routes/logs")
+const cors = require("cors");
 
-const PORT = 3000;
+
+const PORT = 5000;
 
 const app = express()
+app.use(cors());
 app.use(express.json())
 app.use("/sites", sitesRouter);
 app.use("/logs", logsRouter);
