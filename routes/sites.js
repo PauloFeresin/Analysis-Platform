@@ -6,7 +6,7 @@ const router = express.Router()
 router.post("/", async (req, res) => {
     try {
         const {url, name, interval} = req.body;
-        const novoSite = await Site.create({url, name, interval});
+        const novoSite = await Site.create({url, name, interval, header: req.headers});
         res.status(201).json(novoSite);
     } catch(err){
         res.status(400).json({ erro: err.message})

@@ -3,6 +3,8 @@ const { connect } = require("./config/mongo")
 const Site = require("./models/Site");
 const sitesRouter = require("./routes/sites");
 const logsRouter = require("./routes/logs")
+const apisRouter = require("./routes/apis")
+const apiLogsRouter = require("./routes/apiLogs")
 const cors = require("cors");
 
 
@@ -13,7 +15,8 @@ app.use(cors());
 app.use(express.json())
 app.use("/sites", sitesRouter);
 app.use("/logs", logsRouter);
-
+app.use("/apis", apisRouter)
+app.use("/apiLogs", apiLogsRouter)
 
 app.get("/", (req, res) => {
     res.send(`Servidor rodando na porta ${PORT}`)

@@ -39,10 +39,8 @@ function initiateJobs() {
     cron.schedule("*/5 * * * * *", async () => {
         try {
             const sites = await Site.find();
-            for (const site of sites) {
-                const start = Date.now();
-                await checkSite(site)
-            }
+            await Promise.all(sites.map(site=>checkSite(site)))
+
         } catch (err) {
             console.error(err)
         }

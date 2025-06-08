@@ -1,8 +1,7 @@
-const { error } = require("console")
 const mongoose = require("mongoose")
 
 const schema = new mongoose.Schema({
-    siteId: { type: mongoose.Schema.Types.ObjectId, ref: "Site", required: true },
+    apiId: { type: mongoose.Schema.Types.ObjectId, ref: "Api", required: true },
     url: {type: String},
     name: {type: String},
     status: { type: Number, required: true },
@@ -11,4 +10,4 @@ const schema = new mongoose.Schema({
     timestamp: { type: Date, default: Date.now },
 })
 
-module.exports = mongoose.model("SiteLog", schema, "siteLogs");
+module.exports = mongoose.model("ApiLog", schema, "apiLogs"); 

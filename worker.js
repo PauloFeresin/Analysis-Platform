@@ -1,8 +1,10 @@
 const { connect } = require("./config/mongo")
-const initiateJobs = require("./jobs/job");
+const initiateJobs = require("./jobs/sitesMonitor");
+const initiateApiJobs = require("./jobs/apisMonitor")
 
 connect().then(() => {
-        initiateJobs()
+    initiateJobs()
+        initiateApiJobs()
         console.log('Jobs rodando')
 
 }).catch(err => {
