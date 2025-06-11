@@ -1,0 +1,21 @@
+/* App.css */
+
+.container{
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.box{
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  background-color: #f9f9f9;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.log-item {
+  margin-bottom: 20px; /* espaço entre cada log */
+  padding: 10px;
+  border-bottom: 1px solid #ddd; /* opcional, para uma linha de separação */
+}
