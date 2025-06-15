@@ -3,7 +3,8 @@ const ApiLogs = require("../models/LogsApi")
 
 const router = express.Router()
 
-router.get("/", async (req, res) => {
+// Precisa de autenticação
+router.get("/", authMiddleware, async (req, res) => {
     try{
         const logs = await ApiLogs.find()
         res.status(201).json(logs)

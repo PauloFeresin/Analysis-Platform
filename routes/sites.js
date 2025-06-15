@@ -1,9 +1,12 @@
 const express = require("express")
 const Site = require("../models/Site")
+const authMiddleware = require('../middlewares/authMiddleware');
+
 
 const router = express.Router()
 
-router.post("/", async (req, res) => {
+// Todas essas rotas precisam de autenticação
+router.post("/", authMiddleware, async (req, res) => {
     try {
         const {url, name, interval} = req.body;
         const novoSite = await Site.create({url, name, interval, header: req.headers});
@@ -14,7 +17,7 @@ router.post("/", async (req, res) => {
 });
 
 
-router.get("/", async (req,res) => {
+router.get("/", authMiddleware, async (req,res) => {
     try {
         const sites = await Site.find();
         res.json(sites)
@@ -23,7 +26,7 @@ router.get("/", async (req,res) => {
     }
 })
 
-router.put("/", async (req, res) => {
+router.put("/", authMiddleware, async (req, res) => {
     try {
         const { _id, url, name, interval } = req.body;
 

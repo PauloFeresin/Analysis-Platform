@@ -4,7 +4,8 @@ const Api = require("../models/Apis");
 
 const router = express.Router();
 
-router.post("/", async (req, res) => {
+// Precisa de autenticação
+router.post("/", authMiddleware, async (req, res) => {
   try {
     const { name, url, method, headers, body, expectedStatus, expectedKeys } =
       req.body;

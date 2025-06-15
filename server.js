@@ -28,6 +28,7 @@ app.use("/logs", logsRouter);
 app.use("/apis", apisRouter)
 app.use("/apiLogs", apiLogsRouter)
 app.use("/users", usersRouter)
+app.use("/login", require("./routes/login")) //Podemos importar assim também
 
 app.get("/", (req, res) => {
     res.send(`Servidor rodando na porta ${PORT}`)
