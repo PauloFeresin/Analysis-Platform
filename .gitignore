@@ -1,0 +1,49 @@
+# === Geral ===
+
+# node_modules para backend e frontend
+/node_modules/
+**/node_modules/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Pastas de build/output
+/build/
+/dist/
+
+# Arquivos de ambiente (sensitive info)
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Cache de editor e sistema
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# === Backend ===
+
+# Dependendo do que seu backend gera, pode ignorar pastas extras aqui
+
+# === Frontend ===
+
+# React build output
+/frontend/build/
+/frontend/dist/
+
+# === Outros ===
+
+# Arquivos temporários e de sistema
+*.swp
+*.swo
+*.tmp
+*.temp
+*.bak
+*.orig
+*.log

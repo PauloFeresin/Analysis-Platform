@@ -20,5 +20,15 @@ router.post("/", async (req, res) => {
     }
 });
 
+router.get("/", async(req, res) => {
+    try{
+        const foundUsers = await Users.find()
+        res.status(200).json(foundUsers)
+    }catch(err){
+        console.error("Erro ao buscar usuários")
+        res.status(400).json({message: "Erro ao buscar usuários", error: err})
+    }
+})
+
 
 module.exports = router
