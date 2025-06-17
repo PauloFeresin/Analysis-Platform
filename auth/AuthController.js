@@ -5,15 +5,8 @@ require('dotenv').config();
 
 const JWT_SECRET = process.env.JWT_PASS;
 
-const user = {
-    id: 1,
-    name: "Paulo Feresin",
-    email: 'pauo.feresin@gmail.com',
-    permissions: ['admin']
-};
-
 const login = async(req,res) => {
-    const {email, password} = req.body;
+    const {name, email, password} = req.body;
     const passwordStr = String(password);
 
     try{
@@ -30,6 +23,7 @@ const login = async(req,res) => {
         // Cria o payload do token
         const payload = {
             id: user._id,
+            name: user.name,
             email: user.email,
             role: user.role,
         }

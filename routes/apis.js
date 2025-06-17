@@ -1,6 +1,8 @@
 const express = require("express");
 const axios = require("axios");
 const Api = require("../models/Apis");
+const authMiddleware = require('../middlewares/authMiddleware');
+
 
 const router = express.Router();
 

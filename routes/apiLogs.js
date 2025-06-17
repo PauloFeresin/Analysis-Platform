@@ -1,5 +1,6 @@
 const express = require("express")
 const ApiLogs = require("../models/LogsApi")
+const authMiddleware = require('../middlewares/authMiddleware');
 
 const router = express.Router()
 

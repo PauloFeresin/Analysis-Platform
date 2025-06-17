@@ -9,7 +9,7 @@ const usersRouter = require("./routes/users")
 const cors = require("cors");
 
 
-const PORT = 5000;
+const PORT = 3000;
 
 const app = express()
 app.use(cors({
